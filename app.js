@@ -56,18 +56,34 @@ console.log(`PI=${stuff.pi}`);
 
 
 //EVENT MODULE
+//events module is present in NODEJS library so we dont have to provide a path for events
+//Example 1
+/*
 var event=require('events');
-var myEmitter=new event.EventEmitter();
+var myEmitter=new event.EventEmitter(); //creating a EventEmitter
 myEmitter.on('someEvent',function(msg){
   console.log(msg);
 });
-myEmitter.emit('someEvent','the Event was emmited');
-
-
-
-
-
-
+myEmitter.emit('someEvent','the Event was emmited');//manually  emitting the custome event
+*/
+//Example 2
+var events=require('events');
+var util=require('util');
+var Person=function(name){
+  this.name=name;
+};
+util.inherits(Person,events.EventEmitter);
+var a=new Person('a');
+var b=new Person('b');
+var c=new Person('c');
+var people=[a,b,c];
+people.forEach(function(person){
+  person.on('speak',function(mssg){
+    console.log(person.name+" said "+mssg);
+  });
+});
+a.emit('speak','hey how are You ?');
+//LECT 8 complete
 
 
 
