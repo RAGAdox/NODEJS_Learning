@@ -41,9 +41,27 @@ sayBye();
 */
 //module patterns in node js
 //made a function stored in a variable counter in the file count.js
-
+//now to access the function we use the following snippet
+/*
 var counter=require('./count');
 console.log(counter([1,2,3,4,5,6,7]));
+*/
+//importing multiple functions from other file method 1 & method 2 & method 3:-
+/*
+var stuff=require('./count');
+console.log(stuff.counter([1,2,3,4,5,6,7]));
+console.log(stuff.adder(10,111));
+console.log(`PI=${stuff.pi}`);
+*/
+
+
+//EVENT MODULE
+var event=require('events');
+var myEmitter=new event.EventEmitter();
+myEmitter.on('someEvent',function(msg){
+  console.log(msg);
+});
+myEmitter.emit('someEvent','the Event was emmited');
 
 
 
@@ -67,9 +85,7 @@ console.log(counter([1,2,3,4,5,6,7]));
 
 
 
-
-
-
+/*
 
 //creating a local serverin node.js
 var http = require("http");
@@ -85,3 +101,4 @@ http.createServer(function (request, response) {
 
 // Console will print the message
 console.log('Server running at http://127.0.0.1:8081/');
+*/
