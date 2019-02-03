@@ -1,14 +1,17 @@
-console.log('Hii this is my first program in node js');
+//CHECKING IF NODE WAS INSTALLED PROPERLY
+//console.log('Hii this is my first program in node js');
 //global objects in node js
-
+/*
 setTimeout(function(){
   console.log('3 sec have passed');
 },3000);
+*/
+/*
 var time=0
-/*setInterval(function(){
+setInterval(function(){
   time=time+2
   console.log('time elasped :- '+time+'seconds');
-},2000);*/
+},2000);
 var timeout=setInterval(function(){
   time=time+2;
   console.log('time elasped :- '+time+'seconds');
@@ -17,10 +20,57 @@ var timeout=setInterval(function(){
     console.log('10 seconds has passed \nclearing interval');
     clearInterval(timeout);
   }
-},2000);
+},2000);*/
 //some more global objects
-console.log('current directory $'+__dirname);
-console.log('current file $'+__filename);
+//console.log('current directory $'+__dirname);
+//console.log('current file $'+__filename);
+
+//normal function in javascript
+/*
+function sayHi(){
+  console.log('Hii ');
+}
+sayHi();
+*/
+//function Expression
+/*
+var sayBye=function(){
+  console.log('Bye ...');
+}
+sayBye();
+*/
+//module patterns in node js
+//made a function stored in a variable counter in the file count.js
+
+var counter=require('./count');
+console.log(counter([1,2,3,4,5,6,7]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //creating a local serverin node.js
 var http = require("http");
 http.createServer(function (request, response) {
