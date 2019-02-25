@@ -67,7 +67,7 @@ myEmitter.on('someEvent',function(msg){
 myEmitter.emit('someEvent','the Event was emmited');//manually  emitting the custome event
 */
 //Example 2
-var events=require('events');
+/*var events=require('events');
 var util=require('util');
 var Person=function(name){
   this.name=name;
@@ -82,8 +82,47 @@ people.forEach(function(person){
     console.log(person.name+" said "+mssg);
   });
 });
-a.emit('speak','hey how are You ?');
+a.emit('speak','hey how are You ?');*/
 //LECT 8 complete
+//READING AND WRITING FILE using node .js
+//synsronous method of reading and writing
+/*var fs=require('fs');
+var readme=fs.readFileSync('readme.txt','utf8');
+console.log(readme);
+fs.writeFileSync('writeme.txt',readme+"\nthis is writeme.txt");*/
+//asyncronous method of reading and writing
+/*var fs=require('fs');
+fs.readFile('readme.txt','utf8',function(err,data){
+  console.log(data);
+  fs.writeFile('write.txt',data,function(err,data){
+    console.log("written");
+    
+  })
+});
+console.log("this was a async method of reading the file");*/
+//LEcture 9 complete
+//deleting files
+/*var fs=require('fs');
+fs.unlink('write.txt',function(err){
+  if(err==null)
+    console.log('file deleted successfully');
+  else
+    console.log(err);
+});*/
+//Creating and removing directories
+var fs=require('fs');
+//create dir
+/*fs.mkdirSync('stuff');*/
+//remove dir
+/*fs.rmdirSync('stuff');*/
+//in async method
+fs.mkdir('folder',function(err){
+  if(err==null)
+    console.log('dir created successfully');
+  else
+    console.log(err);
+    
+})
 
 
 
