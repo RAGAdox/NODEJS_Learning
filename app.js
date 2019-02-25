@@ -110,19 +110,59 @@ fs.unlink('write.txt',function(err){
     console.log(err);
 });*/
 //Creating and removing directories
-var fs=require('fs');
+//var fs=require('fs');
 //create dir
 /*fs.mkdirSync('stuff');*/
 //remove dir
 /*fs.rmdirSync('stuff');*/
 //in async method
-fs.mkdir('folder',function(err){
+/*fs.mkdir('folder',function(err){
   if(err==null)
     console.log('dir created successfully');
   else
     console.log(err);
     
-})
+});
+fs.rmdir('folder',function(err){
+  if(err==null)
+    console.log('dir removed successfully');
+  else
+    console.log(err);
+    
+});*/
+//creating a direcory and writing into it 
+/*fs.mkdir('dir',function(err){
+  if(err==null)
+  {
+    fs.writeFile('./dir/write.txt','this file is written after directory is created',function(err){
+      if(err==null)
+        console.log("file written successfully");
+    });
+  }
+});*/
+//to remove this dir .
+//in node js non empty folders cant be removed by rmdir .we have to clear it first and then remove it
+/*fs.unlink('./dir/write.txt',function(err){
+  if(err==null)
+  fs.rmdir('dir',function(err){
+    if(err==null)
+      console.log('dir removed successfully');
+    else
+      console.log(err);
+      
+  })
+});*/
+//CLIENTS AND SERVERS IN NODE js 
+/*var http=require('http');
+var server=http.createServer(function(req,res){
+  console.log('request made from '+req.url);
+  
+  res.writeHead(200,{'Content-Type':'text/plain'});
+  res.end('hii from node server');
+});
+server.listen(3000);
+console.log('Listening to port 3000');*/
+
 
 
 
